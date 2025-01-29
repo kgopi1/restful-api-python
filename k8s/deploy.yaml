@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cpt-api
+  namespace: cpt-api
+  name: cpt-api-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpt-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cpt-api
+    spec:
+      containers:
+      - image: kgopi1/api:29-01-2025
+        name: cpt-api
+        resources: {}
+status: {}
